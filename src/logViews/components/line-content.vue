@@ -1,6 +1,6 @@
 <template>
   <div class="line-content">
-    <span style="display:block;white-space:pre-wrap;word-wrap:break-word;"
+    <span style="display:block;white-space:pre-wrap;word-wrap:break-word;text-align:left"
       v-for="(item, index) in content"
       :key="index"
       :class="[

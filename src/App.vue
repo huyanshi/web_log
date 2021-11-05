@@ -5,7 +5,7 @@
 
     <h1>测试测试</h1>
     <div style="width: 1000px; height: 600px;">
-    <log-viewer :log="logStr" :loading="isLoading" :height="500" :width='900' :hasNumber='false'/>
+    <log-viewer ref="logView" :log="logStr" :loading="isLoading" :height="500" :width='900' :hasNumber='false'/>
    </div>
     <center>
      <div style="width: 200px; height: 600px; background-color:black;word-wrap:break-word; word-break:normal">
@@ -61,7 +61,9 @@ export default {
         console.log(messageEvent)
         const da = JSON.parse(messageEvent.data)
         // let data = messageEvent
-        this.log.push(da['msg'])
+        // this.log.push(da['msg'])
+        this.$refs.logView.pushLog(da['msg'])
+        // this.logView.pushLog(da['msg'])
       }
     }
   }

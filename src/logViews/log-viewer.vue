@@ -19,6 +19,7 @@ import VirtualList from 'vue-virtual-scroll-list'
 import LineWrapper from './components/line-wrapper.vue'
 import LogLoading from './components/loading.vue'
 import parse from './utils'
+import ansiParse from './utils/ansi-parse'
 
 export default {
   name: 'LogViewer',
@@ -85,7 +86,8 @@ export default {
       start: 0,
       scrollStart: 0,
       animate: null,
-      LineWrapper
+      LineWrapper,
+      originData:[]
     }
   },
   computed: {
@@ -99,9 +101,10 @@ export default {
       return 30
     },
     lines() {
-      return parse(this.log)
+      return this.originData
     },
     linesCount() {
+      console.log(this.lines.length)
       return this.lines.length + (this.loading ? 1 : 0)
     }
   },
@@ -111,6 +114,7 @@ export default {
       handler(lines) {
         this.$refs.virturalList && this.$refs.virturalList.forceRender()
         if (this.autoScroll) {
+          console.log('aaaa' + this.linesCount)
           this.setScrollTop(this.linesCount)
         }
       }
@@ -183,7 +187,16 @@ export default {
     },
     onscroll(event, data) {
       this.scrollStart = Math.ceil(data.offset / this.rowHeight)
+    },
+    pushLog(string){
+      this.originData.push(ansiParse(string))
     }
+  },
+  mounted() {
+    if (this.log != ''){
+      this.originData = parse(this.log)
+    }
+
   }
 }
 </script>
