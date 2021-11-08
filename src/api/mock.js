@@ -4,7 +4,7 @@ Mock.setup({
     timeout:1000
 })
 
-Mock.mock('list?/path=',{
+Mock.mock('list?path=',{
     username:'aaaa'
 })
 
