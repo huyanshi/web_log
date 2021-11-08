@@ -24,6 +24,7 @@
 <script>
 import HelloWorld from './components/HelloWorld.vue'
 import logViewer from './logViews'
+import {getFileListWithPath} from './api/data.js'
 // import logViewer from './logViews/log-index.js'
 // import logViewer from './logViews/log-viewer.vue'
 
@@ -50,8 +51,8 @@ export default {
     // }, 1000);
     console.log('aaaa')
     // 页面渲染出来
-    //  let result = await getFileListData()
-    //  console.log(result)
+     let result = await getFileListWithPath('/')
+     console.log(result)
   },
   methods:{
     processSocketData(){
