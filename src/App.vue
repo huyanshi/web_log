@@ -1,7 +1,12 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
+    <FileBrowser msg="file Browser" style="width: 500px; height: 600px;"/>
+    <!-- 文件列表 -->
+    <div style="width: 500px; height: 600px; background-color:red">
+      <h1>aaaaaaaaaaaassssssssss</h1>
+
+    </div>
 
     <h1>测试测试</h1>
     <div style="width: 1000px; height: 600px;">
@@ -22,7 +27,7 @@
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import FileBrowser from './fileBrowser/fileBrowser.vue'
 import logViewer from './logViews'
 import {getFileListWithPath} from './api/data.js'
 // import logViewer from './logViews/log-index.js'
@@ -31,7 +36,7 @@ import {getFileListWithPath} from './api/data.js'
 export default {
   name: 'App',
   components: {
-    HelloWorld,logViewer
+    FileBrowser,logViewer
   },
   computed: {
     logStr() {
@@ -51,8 +56,8 @@ export default {
     // }, 1000);
     console.log('aaaa')
     // 页面渲染出来
-     let result = await getFileListWithPath('/')
-     console.log(result)
+    //  let result = await getFileListWithPath('/')
+    //  console.log(result)
   },
   methods:{
     processSocketData(){

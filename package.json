@@ -10,7 +10,10 @@
   "dependencies": {
     "axios": "^0.24.0",
     "core-js": "^3.6.5",
+    "jquery": "^3.6.0",
+    "jquery.ui.widget": "^1.10.3",
     "mockjs": "^1.1.0",
+    "path": "^0.12.7",
     "vue": "^2.6.11",
     "vue-virtual-scroll-list": "^1.4.1"
   },

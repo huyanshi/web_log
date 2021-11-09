@@ -1,11 +1,9 @@
 import Mock from "mockjs";
-
+import documentsData from './mockData/mockDocuments.js'
+ 
 Mock.setup({
     timeout:1000
 })
 
-Mock.mock('list?path=',{
-    username:'aaaa'
-})
-
+Mock.mock(/\list/,documentsData)
 

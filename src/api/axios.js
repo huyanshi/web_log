@@ -44,5 +44,5 @@ class HttpRequest{
     }
 }
 
-const axiosObj = new HttpRequest("http://localhost:8080");
+const axiosObj = new HttpRequest("http://172.16.55.18:8080");
 export default axiosObj
