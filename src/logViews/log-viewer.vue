@@ -187,6 +187,7 @@ export default {
     },
     onscroll(event, data) {
       this.scrollStart = Math.ceil(data.offset / this.rowHeight)
+      console.log('aaaaa scrollStart' + this.scrollStart)
     },
     pushLog(string){
       this.originData.push(ansiParse(string))

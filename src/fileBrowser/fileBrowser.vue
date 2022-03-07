@@ -37,6 +37,7 @@ export default {
     return {
       log: ["123", "455"],
       isLoading: true,
+      FileListItem,
       fileListData:[
         { aaaa: 'Foo' },
         { aaa: 'Bar' }
